@@ -14,6 +14,7 @@ session                 =require("express-session"),
 MongoStore              =require("connect-mongo"),
 
 http       =require("http").createServer(app);
+var port=process.env.PORT || 2001;
 // https      =require("https").createServer(app)
 mongoose.connect("mongodb+srv://allChats:XQ23JMC6hsPCv4AZ@mongodb-tutorial.wvkvs.mongodb.net/allchat?retryWrites=true&w=majority")
 
@@ -116,19 +117,7 @@ app.get("/allusers",function(req,res){
   })
 })
 
-cron.schedule("* * * * * *",function(req,res){
 
-  request("http://localhost:2001/test",function(error,response,data){
-       
-        if (!error && response.statusCode==200){
-         
-
-
-        }
-      
-  })
-
-})
 
 app.get("/test",function(req,res){
  console.log("croned")
@@ -351,7 +340,7 @@ failureRedirect:"/"
 }),function(req,res){
 
 });
-http.listen(2001,function(){
+http.listen(port,function(){
 
 	console.log("srever started")
 })
