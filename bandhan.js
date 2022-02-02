@@ -76,10 +76,6 @@ app.use(function(req,res,next){
   res.locals.currentUser=req.user
   next()
 })
-app.get("/",function(req,res){
-
-	res.render("chat.ejs")
-})
 
 app.get("/create",function(req,res){
 
@@ -87,12 +83,7 @@ app.get("/create",function(req,res){
 })
 
 
-// app.get("/login",function(req,res){
 
-
-//   res.render("")
-
-// })
 
 
 app.post("/create",function(req,res){
