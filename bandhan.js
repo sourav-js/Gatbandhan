@@ -13,9 +13,7 @@ flash                   =require("connect-flash"),
 session                 =require("express-session"),
 MongoStore              =require("connect-mongo"),
 
-http       =require("http").createServer(app);
 var port=process.env.PORT || 2001;
-// https      =require("https").createServer(app)
 mongoose.connect("mongodb+srv://allChats:XQ23JMC6hsPCv4AZ@mongodb-tutorial.wvkvs.mongodb.net/allchat?retryWrites=true&w=majority")
 
 
@@ -119,31 +117,7 @@ app.get("/allusers",function(req,res){
 
 
 
-app.get("/test",function(req,res){
- console.log("croned")
-       var date = new Date();
- console.log(date.toISOString().split('T')[0])
- user.find({},function(err,users){
-   for (var i=0;i<users.length;i++){
-     user.findById(users[i]._id,function(err,info){
 
-// date.setDate(date.getDate() - 30);
-// var dateString = date.toISOString().split('T')[0]; // "2016-06-08"
-      if(info.status=="paid"){
-
-        info.updateOne({status:"notpaid"},function(err,infos){
-                
-              // console.log(info.date.getFullYear())
-
-        })
-      }
- 
-
-})
- }
-
- })
- }) 
 
 
 
@@ -340,10 +314,6 @@ failureRedirect:"/"
 }),function(req,res){
 
 });
-http.listen(port,function(){
-
-	console.log("srever started")
-})
 
 
 
@@ -368,34 +338,8 @@ app.get("/update/:id",function(req,res){
 })
   })
 })
-var io=require("socket.io")(http)
 
-io.on("connection",function(socket){
+app.listen(port,function(){
 
-	console.log("connected")
-
- 
-
- socket.on("types",function(msg){
- 
-   console.log(msg)
-   console.log(msg.keys)
- 
- 	socket.broadcast.emit("types",msg.keys)
- })
-
- socket.on("join",function(msg){
-   
-
-    socket.join(msg.ids)
-   console.log(msg.ids)
-
- })
-
- socket.on("message",function(msg){
-
-  socket.broadcast.to(msg.ids).emit("message",msg)
-  console.log(msg.ids)
- }) 
-
+	console.log("srever started")
 })
