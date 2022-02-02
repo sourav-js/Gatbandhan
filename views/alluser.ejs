@@ -1,0 +1,83 @@
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js">
+</script>  
+   
+   <h1><%=currentUser.name%></h1>
+ <b>username</b>:<%=currentUser.username%>
+   <br>
+   <b>phone</b>:<%=currentUser.phone%>,
+       <br>
+
+   <b>profileType</b>:<%=currentUser.profileType%>,
+      <br>
+<b>gender</b>:<%=currentUser.gender%>,
+      <br>
+
+
+   <b>DOB</b>:<%=currentUser.DOB%>,
+   <br>
+
+   <%if(currentUser.willing=="true"){%>
+    <b>willing</b>:"Willing to marry from other communities",
+   <%}%>
+   <br>
+
+   <b>religion</b>:<%=currentUser.religion%>,,
+   <br>
+
+   <b>Mother-Tongue</b>:<%=currentUser.MT%>,
+   <br>
+
+   <b>caste</b>:<%=currentUser.caste%>,
+   <br>
+
+   <b>height</b>:<%=currentUser.height%>,
+   <br>
+
+   <b>Marital-Status</b>:<%=currentUser.MS%>,
+   <br>
+
+   <%if(currentUser.disability=="true"){%>
+   <b>disability</b>:"physically disabled",
+   <%}%>
+   <br>
+
+   <b>Family-Status</b>:<%=currentUser.FS%>,
+   <br>
+
+   <b>Family-Type</b>:<%=currentUser.FT%>,
+   <br>
+
+   <b>Family-Value</b>:<%=currentUser.FV%>,
+   <br>
+
+   <b>Education</b>:<%=currentUser.Education%>,
+   <br>
+
+   <b>EmployedIn</b>:<%=currentUser.EmployedIn%>,
+   <br>
+
+   <b>Occupation</b>:<%=currentUser.Occupation%>,
+   <br>
+
+   <b>AnnualIncome</b>:<%=currentUser.AnnualIncome%>,
+   <br>
+
+   <b>workLocation</b>:<%=currentUser.workLocation%>,
+   <br>
+
+   <b>ResidingState</b>:<%=currentUser.ResidingState%>,
+   <br>
+
+   <b>ResidingCity</b>:<%=currentUser.ResidingCity%>,
+   <br>
+
+   <b>AboutYou</b>:<h3 style='word-break:break-all'><%=currentUser.AboutYou%></h3>
+   
+   <br>
+   
+   <b>Registered</b>:<%=currentUser.date.toLocaleString("en-UN")%>
+
+
+
+  
