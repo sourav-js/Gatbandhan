@@ -13,7 +13,7 @@ flash                   =require("connect-flash"),
 session                 =require("express-session"),
 MongoStore              =require("connect-mongo"),
 
-var port=process.env.PORT || 2001;
+var port=process.env.PORT || 2000;
 mongoose.connect("mongodb+srv://allChats:XQ23JMC6hsPCv4AZ@mongodb-tutorial.wvkvs.mongodb.net/allchat?retryWrites=true&w=majority")
 
 
